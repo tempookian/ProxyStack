@@ -1,0 +1,15 @@
+apiVersion: v2
+name: proxy-stack
+description: Helm chart for VPN and gateway tools on Kubernetes
+type: application
+version: 0.1.0
+appVersion: "0.0.1"
+home: https://github.com/your-org/vpn-kuber
+maintainers:
+  - name: Your Name
+    email: tempookian@gmail.com
+keywords:
+  - vpn
+  - nginx
+  - xray
+  - kubernetes

@@ -1,0 +1,19 @@
+certManager:
+  email: "john@doe.com"
+  selfSigned: true # if fale, acme is used
+
+ingress:
+  className: nginx
+  host: "www.example.com"
+  vpnPath: "/api01"
+
+xray:
+  listenPort: 10801 # inside cluster; not exposed
+  logLevel: "debug"
+  client: 
+    email: "john@users.com"
+    id: "aeffeaee-e33e-4a40-ba5d-163c890dbddd"
+
+replicas:
+  xray: 1
+  nginx: 1

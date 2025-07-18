@@ -1,0 +1,23 @@
+apiVersion: skaffold/v4beta13
+kind: Config
+metadata:
+  name: proxy-stack
+
+build:
+  artifacts:
+    - image: xray
+      context: docker/xray/
+      docker:
+        dockerfile: Dockerfile
+
+  hooks:
+    before:
+      - command: ["kubectl", "apply", "-f", "kubectl apply -f https://github.com/cert-manager/cert-manager/releases/latest/download/cert-manager.yaml"]
+
+deploy:
+  helm:
+    releases:
+      - name: vpn-kuber
+        chartPath: vpn-kuber
+        valuesFiles:
+          - vpn-kuber/values.yaml
