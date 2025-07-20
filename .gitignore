@@ -1,3 +1,3 @@
-./vpn-kuber/values.yaml
 .vscode/
 values.yaml
+certs/

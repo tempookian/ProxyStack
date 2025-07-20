@@ -4,12 +4,11 @@ metadata:
   name: vpn-ingress
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
-    cert-manager.io/cluster-issuer: {{ if .Values.certManager.selfSigned }}selfsigned{{ else }}letsencrypt-staging{{ end }}
 spec:
   tls:
   - hosts:
     - "{{ .Values.ingress.host }}"
-    secretName: vpn-domain-tls
+    secretName: vpn-domain-tls-secret
   rules:
     - host: "{{ .Values.ingress.host }}"
       http:

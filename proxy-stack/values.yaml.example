@@ -1,11 +1,10 @@
-certManager:
-  email: "john@doe.com"
-  selfSigned: true # if fale, acme is used
-
 ingress:
   className: nginx
   host: "www.example.com"
   vpnPath: "/api01"
+  tls:
+    crtFile: certs/cert.pem
+    keyFile: certs/cert.key
 
 xray:
   listenPort: 10801 # inside cluster; not exposed

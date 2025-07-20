@@ -9,15 +9,10 @@ build:
       context: docker/xray/
       docker:
         dockerfile: Dockerfile
-
-  hooks:
-    before:
-      - command: ["kubectl", "apply", "-f", "kubectl apply -f https://github.com/cert-manager/cert-manager/releases/latest/download/cert-manager.yaml"]
-
 deploy:
   helm:
     releases:
-      - name: vpn-kuber
-        chartPath: vpn-kuber
+      - name: proxy-stack
+        chartPath: proxy-stack
         valuesFiles:
-          - vpn-kuber/values.yaml
+          - proxy-stack/values.yaml
