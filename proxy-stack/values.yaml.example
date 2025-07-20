@@ -16,3 +16,9 @@ xray:
 replicas:
   xray: 1
   nginx: 1
+
+image:
+  repository: xray
+  tag: local
+  pullPolicy: Never
+  
